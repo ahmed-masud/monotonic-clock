@@ -1,6 +1,6 @@
 [package]
 name = "monotonic-clock"
-version = "0.0.4"
+version = "0.0.5"
 edition = "2021"
 description = "Some Clock"
 repository = "https://github.com/ahmed-masud/monotonic-clock"
