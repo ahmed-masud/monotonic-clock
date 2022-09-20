@@ -1,4 +1,3 @@
-
 use crate::epoch::Epoch;
 use ::std::time::Duration;
 
@@ -26,7 +25,7 @@ use ::std::time::Duration;
 /// let end = clock.now();
 /// assert!(end - start >= Duration::from_millis(100));
 /// ```
-/// 
+///
 
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct MonotonicClock {
@@ -34,7 +33,6 @@ pub struct MonotonicClock {
     start: ::std::time::Instant,
     stop: Option<::std::time::Instant>,
 }
-
 
 impl Default for MonotonicClock {
     #[inline]
@@ -76,8 +74,7 @@ impl MonotonicClock {
         if let Some(stop) = self.stop {
             self.stop = None;
             ::std::time::Instant::now().checked_duration_since(stop)
-        }
-        else {
+        } else {
             Some(Duration::new(0, 0))
         }
     }
@@ -136,10 +133,10 @@ impl ::std::fmt::Display for MonotonicClock {
     }
 }
 
-impl ::core::convert::Into<Duration> for MonotonicClock {
+impl ::std::convert::From<MonotonicClock> for Duration {
     /// Get the now time since the clock's epoch.
-    fn into(self) -> Duration {
-        self.time()
+    fn from(mc: MonotonicClock) -> Self {
+        mc.time()
     }
 }
 
