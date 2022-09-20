@@ -1,5 +1,3 @@
-
-
 use ::std::time::Duration;
 
 /// Provides a starting timestamp in nanoseconds from UNIX_EPOCH.
@@ -10,7 +8,11 @@ impl Epoch {
     /// Returns the current time as a UnixTimeStamp.
     #[inline]
     pub fn from_unix() -> Self {
-        Self(::std::time::SystemTime::now().duration_since(::std::time::UNIX_EPOCH).unwrap())
+        Self(
+            ::std::time::SystemTime::now()
+                .duration_since(::std::time::UNIX_EPOCH)
+                .unwrap(),
+        )
     }
 
     /// Creates Epoch with a base duration.
@@ -24,7 +26,6 @@ impl Epoch {
     pub fn from_zero() -> Self {
         Self::from(Duration::new(0, 0))
     }
-
 }
 
 impl ::std::default::Default for Epoch {
@@ -98,7 +99,6 @@ impl ::std::ops::SubAssign<Duration> for Epoch {
     }
 }
 
-
 impl ::std::ops::Deref for Epoch {
     type Target = Duration;
 
@@ -117,7 +117,11 @@ impl ::std::ops::DerefMut for Epoch {
 
 impl ::std::fmt::Display for Epoch {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        write!(f, "{}", self.0.as_secs() as f64 + self.0.subsec_nanos() as f64 * 1e-9)
+        write!(
+            f,
+            "{}",
+            self.0.as_secs() as f64 + self.0.subsec_nanos() as f64 * 1e-9
+        )
     }
 }
 
