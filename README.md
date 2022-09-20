@@ -5,6 +5,7 @@
 [![CI](https://github.com/ahmed-masud/monotonic-clock/workflows/CI/badge.svg)](https://github.com/ahmed-masud/monotonic-clock/actions)
 [![Coverage Status](https://coveralls.io/repos/github/ahmed-masud/monotonic-clock/badge.svg?branch=main)](https://coveralls.io/github/ahmed-masud/monotonic-clock?branch=main)
 
+
 ## Installation
 
 ### Cargo
