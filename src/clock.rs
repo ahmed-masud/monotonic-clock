@@ -133,7 +133,7 @@ impl ::std::fmt::Display for MonotonicClock {
     }
 }
 
-impl From<MonotonicClock> for Duration {
+impl ::std::convert::From<MonotonicClock> for Duration {
     /// Get the now time since the clock's epoch.
     fn from(mc: MonotonicClock) -> Self {
         mc.time()
