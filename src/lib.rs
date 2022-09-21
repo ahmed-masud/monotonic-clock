@@ -19,5 +19,5 @@
 mod clock;
 mod epoch;
 
-pub use clock::MonotonicClock;
+pub use clock::{Clock, MonotonicClock};
 pub use epoch::Epoch;
