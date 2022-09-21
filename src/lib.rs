@@ -5,10 +5,10 @@
 //!
 //! ## Example
 //! ```
-//! use monotonic_clock::MonotonicClock;
+//! use monotonic_clock::Clock;
 //! use std::thread;
 //! use std::time::Duration;
-//! let clock = MonotonicClock::new();
+//! let clock = Clock::new();
 //! let start = clock.now();
 //! thread::sleep(Duration::from_millis(100));
 //! let end = clock.now();
@@ -19,5 +19,5 @@
 mod clock;
 mod epoch;
 
-pub use clock::MonotonicClock;
+pub use clock::{Clock, MonotonicClock};
 pub use epoch::Epoch;
