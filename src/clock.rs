@@ -77,6 +77,11 @@ impl Clock {
         }
     }
 
+    /// Get current time on the clock.
+    pub fn now(&self) -> Duration {
+        self.inner.read().unwrap().now()
+    }
+    
     /// Start the clock.
     pub fn start(&self) {
         self.inner.write().unwrap().start();
