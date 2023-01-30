@@ -25,7 +25,6 @@ use ::std::time::Duration;
 /// let end = clock.now();
 /// assert!(end - start >= Duration::from_millis(100));
 /// ```
-///
 
 pub trait MonotonicClock {
     /// Return the epoch of the clock.
@@ -81,7 +80,7 @@ impl Clock {
     pub fn now(&self) -> Duration {
         self.inner.read().unwrap().now()
     }
-    
+
     /// Start the clock.
     pub fn start(&self) {
         self.inner.write().unwrap().start();
